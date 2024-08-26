@@ -120,8 +120,8 @@ public class ContactRepository {
         }
         var removed = contacts.removeIf(c -> c.getPhoneNumber().equals(phoneNumber));
         if (!removed) {
-            LOGGER.warn("No contact with phone number: {}", phoneNumber);
-            return;
+//            LOGGER.warn("No contact with phone number: {}", phoneNumber);
+            throw new IllegalArgumentException("No contact found");
         }
         LOGGER.debug("Contact removed by phone number: {}", phoneNumber);
     }
