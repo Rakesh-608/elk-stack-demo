@@ -27,8 +27,8 @@ public class ContactRepository {
      */
     public void addContact(Contact contact) {
         if (contact.getName() == null || contact.getName().isEmpty()) {
-            LOGGER.warn("Contact name is empty");
-            throw new IllegalArgumentException("Contact name is empty");
+            LOGGER.warn("Name is null or empty.");
+            throw new IllegalArgumentException("Name is null or empty.");
         }
         if (contact.getPhoneNumber() == null || contact.getPhoneNumber().isEmpty()) {
             LOGGER.warn("Contact phone number is empty");
